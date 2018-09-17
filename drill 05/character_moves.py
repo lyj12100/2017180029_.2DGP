@@ -124,6 +124,23 @@ def go_seventhpos():
         frame = (frame + 1) % 8
         delay(0.05)
 
+def go_eighthpos():
+    frame = 0
+    count = 0
+    x, y = 692,518
+    nextx, nexty =682,336
+    nextposx, nextposy = (nextx - x) / 50, (nexty - y) / 50
+    while count < 50:
+        clear_canvas()
+        grass.draw(400, 30)
+        character.clip_draw(frame * 100, 0, 100, 100, x, y)
+        update_canvas()
+        count += 1
+        x += nextposx
+        y += nextposy
+        frame = (frame + 1) % 8
+        delay(0.05)
+
 
 while True:
     firstpos()
@@ -133,5 +150,6 @@ while True:
     go_fifthpos()
     go_sixthpos()
     go_seventhpos()
+    go_eighthpos()
 
 close_canvas()
