@@ -38,10 +38,27 @@ def go_secondpos():
         frame = (frame + 1) % 8
         delay(0.05)
 
+def go_thirdpos():
+    frame = 0
+    count = 0
+    x, y = 535, 470
+    nextx,nexty=477,203
+    nextposx, nextposy = (nextx-x) / 50, (nexty-y) / 50
+    while count < 50:
+        clear_canvas()
+        grass.draw(400, 30)
+        character.clip_draw(frame * 100, 0, 100, 100, x, y)
+        update_canvas()
+        count += 1
+        x += nextposx
+        y += nextposy
+        frame = (frame + 1) % 8
+        delay(0.05)
 
 
 while True:
     firstpos()
     go_secondpos()
-   
+    go_thirdpos()
+
 close_canvas()
