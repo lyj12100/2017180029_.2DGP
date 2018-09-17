@@ -1,7 +1,6 @@
 from pico2d import *
+
 open_canvas()
-
-
 grass=load_image('grass.png')
 character=load_image('animation_sheet.png')
 
@@ -9,7 +8,8 @@ def firstpos():
     frame=0
     count=0
     x,y=203,535
-    nextposx,nextposy=(132-203)/50 ,(243-535)/50
+    nextx,nexty=132,243
+    nextposx,nextposy=(nextx-x)/50 ,(nexty-y)/50
     while count<50:
         clear_canvas()
         grass.draw(400,30)
@@ -25,7 +25,8 @@ def go_secondpos():
     frame = 0
     count = 0
     x, y = 132, 243
-    nextposx, nextposy = (535 - 132) / 50, (470 - 243) / 50
+    nextx,nexty=535,470
+    nextposx, nextposy = (nextx-x) / 50, (nexty-y) / 50
     while count < 50:
         clear_canvas()
         grass.draw(400, 30)
@@ -42,5 +43,5 @@ def go_secondpos():
 while True:
     firstpos()
     go_secondpos()
-
+   
 close_canvas()
