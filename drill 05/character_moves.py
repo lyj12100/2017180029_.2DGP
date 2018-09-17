@@ -188,3 +188,5 @@ while True:
     go_firstpos()
 
 close_canvas()
+
+#drill_05 complete
